@@ -1,11 +1,11 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "SwiftPlantUML",
-    platforms: [.macOS(.v10_11)],
+    platforms: [.macOS(.v12)],
     products: [
         .library(
             name: "SwiftPlantUMLFramework",
@@ -14,9 +14,9 @@ let package = Package(
         .executable(name: "swiftplantuml", targets: ["swiftplantuml"]),
     ],
     dependencies: [
-        .package(name: "SourceKitten", url: "https://github.com/jpsim/SourceKitten", from: "0.31.1"),
-        .package(name: "swift-argument-parser", url: "https://github.com/apple/swift-argument-parser.git", .upToNextMinor(from: "1.0.1")),
-        .package(name: "SwiftyBeaver", url: "https://github.com/SwiftyBeaver/SwiftyBeaver.git", .exact("1.9.5")),
+        .package(url: "https://github.com/jpsim/SourceKitten", from: "0.31.1"),
+        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.1.0"),
+        .package(url: "https://github.com/SwiftyBeaver/SwiftyBeaver.git", branch: "1.9.5"),
     ],
     targets: [
         .target(
